@@ -1,0 +1,94 @@
+/* Custom property definition */
+@property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+/* Pie chart styling */
+.pie {
+  --p: 20;
+  --b: 22px;
+  --c: darkred;
+  --w: 150px;
+  
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 5px auto;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+
+/* Pseudo-elements for styling the pie chart */
+.pie:before,
+.pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pie:before {
+  inset: 0;
+  background:
+    radial-gradient(farthest-side, var(--c) 98%, #0000) top / var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+  inset: calc(50% - var(--b)/2);
+  background: var(--c);
+  transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+
+/* Animation class */
+.animate {
+  animation: p 3s .5s both;
+}
+
+/* Hide the after element for the .no-round class */
+.no-round:after {
+  content: none;
+}
+
+/* Keyframes animation */
+@keyframes p {
+  from {
+    --p: 0;
+  }
+}
+
+/* Body styling */
+body {
+  background: #f2f2f2;
+}
+
+/* Centering the change credentials section */
+.change_credentials {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.change_credentials a {
+  color: #000;
+  text-decoration: none;
+}
+
+.change_credentials a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  body {
+    min-width: 250px;
+  }
+}

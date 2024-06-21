@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "AIMS 3.0",
+    "version": "1.0",
+    "description": "An extension with a login form.",
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "chart.html"
+    },
+    "icons": {
+   "32": "logo.png"
+},
+    "web_accessible_resources": [
+      {
+        "resources": ["styles.css","script.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  
