@@ -1,11 +1,11 @@
-# Abes_Attendance_Extention
+# Abes_Attendance_Extension
 
-If you have a zip file or you have cloned the extention repo, you can easily load it into Chrome. Here are the steps to do that:
+If you have a .zip file or you have cloned the extension repository, you can easily load it into Chrome. Here are the steps to do that:
 
 ### Step 1: Unzip the Extension
 
 1. **Unzip the File**:
-   - Extract the contents of the zip file to a directory on your computer. You can use any unzipping tool or built-in OS features to do this. For example, extract to a directory named `my-chrome-extension`.
+   - Extract the contents of the .zip file to a directory on your computer. You can use any unzipping tool or built-in OS features to do this. For example, extract to a directory named `my-chrome-extension`.
 
 ### Step 2: Load the Extension in Chrome
 
@@ -33,22 +33,22 @@ If you have a zip file or you have cloned the extention repo, you can easily loa
 By following these steps, you should be able to load and run the Chrome extension.
 
 
-### how to use the extention
+### How to use the extension
 
 1. **Access the Extension**:
-   - Open Chrome
-   - Pin the extention
-   - Click it
-   - Enter your credentials and hit save button (credentials will be saved)
-   - click the extention twice or click on wanna see chart
+   - Open Chrome.
+   - Pin the extension.
+   - Click on it.
+   - Enter your credentials and hit the save button. (credentials will be saved)
+   - Click the extention twice or click on Wanna See Chart.
      **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
-   - (is any error or in case of wrong credentials, it will show alert)
+   - (If any error or in case of wrong credentials, it will show alert)
      
 3. **Change Saved Credentials**
-   - in case of wrong credentials or to change cedentials , Click change credentials , save it again
+   - In case of wrong credentials or to change the credentials, Click change credentials, and then save it again.
   
 4. **Recover Pass**
-   - to recover password , Click Forget Password , and enter your Username and hit submit (You will recieve recovery link on your college mail)
+   - To recover the password, click Forgot Password, and enter your Username and hit submit. (You will recieve recovery link on your college mail)
 
 
      **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
