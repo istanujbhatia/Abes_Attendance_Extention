@@ -1,0 +1,98 @@
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+#profile{
+    border-radius: 50%;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+/* div{
+    border-radius: 50%;
+    background-color: #555;
+} */
+
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile-info p {
+    width: 48%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info p svg {
+    margin-right: 10px;
+    fill: #000;
+}
+
+.profile-info p span {
+    font-weight: bold;
+    color: #000;
+    margin-right: 5px;
+}
+
+.profile-info p span.value {
+    font-weight: normal;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .profile-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .profile-info p {
+        width: 100%;
+    }
+}
+.chart {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .chart a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .chart a:hover {
+    text-decoration: underline;
+  }
+
+body {
+    min-width: 300px;
+}

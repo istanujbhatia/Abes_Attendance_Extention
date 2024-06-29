@@ -21,10 +21,11 @@ let generateToken = function (u, p) {
     "mode": "cors",
     "credentials": "omit"
 }).then((response) => response.json())
-.then((json) => console.log(json.token))
 .catch(error => {
   console.log(`ERROR : Authentication : ${error}`)
   alert("Error!! Enter correct username and password", error);
 });
 }
-generateToken("username","pass")
+let token = generateToken("2022b1541120","100%Pubg")
+console.log(token);
+

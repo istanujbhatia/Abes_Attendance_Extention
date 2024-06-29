@@ -1,0 +1,11 @@
+
+let dept_sec=document.querySelector('#dept_sec')
+let mail=document.querySelector('#mail')
+let mobNo=document.querySelector('#mobNo')
+let adminNo=document.querySelector('#adminNo')
+let rollNo=document.querySelector('#rollNo')
+let passingYear=document.querySelector('#passingYear')
+let term=document.querySelector('#term')
+let lastLoginTime=document.querySelector('#lastLoginTime')
+let role=document.querySelector('#role')
+let pin=document.querySelector('#pin')

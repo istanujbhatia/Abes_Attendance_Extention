@@ -7,7 +7,6 @@ function getSavedCredentials() {
     password: savedPassword
   };
 }
-
 // Function to generate token
 let generateToken = function (u, p) {
   let Authentication=false;
@@ -40,16 +39,19 @@ let generateToken = function (u, p) {
   .then(json => {
     Authentication=true;
     console.log(`Authentication : ${Authentication}`)
-    findData(json.token);
+    findAttendance(json.token);
+
   })
   .catch(error => {
     console.log(`Authentication : ${Authentication}`)
     alert("Error!! Enter correct username and password", error);
   });
 }
+   
+   
 
 // Function to find data
-let findData = function (token) {
+let findAttendance = function (token) {
   fetch("https://abes.platform.simplifii.com/api/v1/custom/getCFMappedWithStudentID?embed_attendance_summary=1", {
     "method": "GET",
     "headers": {
@@ -60,9 +62,6 @@ let findData = function (token) {
     "mode": "cors",
   })
     .then(response => {
-      // if (!response.ok) {
-      //   throw new Error('Network response was not ok');
-      // }
       return response.json();
     })
     .then(json => {
@@ -101,9 +100,24 @@ let updatePieChart = function (attendance) {
 // Load saved credentials on page load
 window.addEventListener('load', function () {
   let savedCredentials = getSavedCredentials();
-    generateToken(savedCredentials.username, savedCredentials.password);
+  generateToken(savedCredentials.username, savedCredentials.password);
 
 });
 
-
-
+//curl 'https://abes.platform.simplifii.com/api/v1/cards' \
+// -X 'PATCH' \
+// -H 'Accept: application/json, text/plain, */*' \
+// -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+// -H 'Authorization: Bearer ' \
+// -H 'Content-Type: application/json' \
+// -H 'DNT: 1' \
+// -H 'Origin: https://aims-abes.vercel.app' \
+// -H 'Referer: https://aims-abes.vercel.app/' \
+// -H 'Sec-Fetch-Dest: empty' \
+// -H 'Sec-Fetch-Mode: cors' \
+// -H 'Sec-Fetch-Site: cross-site' \
+// -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36' \
+// -H 'sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"' \
+// -H 'sec-ch-ua-mobile: ?0' \
+// -H 'sec-ch-ua-platform: "Linux"' \
+// --data-raw '{"card_unique_code":"","action":"SetPin","pin":""}'
