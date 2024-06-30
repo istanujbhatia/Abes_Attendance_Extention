@@ -7,6 +7,8 @@ function getSavedCredentials() {
     password: savedPassword
   };
 }
+var userData;
+var dept;
 // Function to generate token
 let generateToken = function (u, p) {
   let Authentication=false;
@@ -35,20 +37,20 @@ let generateToken = function (u, p) {
       throw new Error('Network response was not ok');
     }
     return response.json();
+    
   })
   .then(json => {
     Authentication=true;
     console.log(`Authentication : ${Authentication}`)
+    userData=JSON.stringify(json)
+    localStorage.setItem('userData', userData);
     findAttendance(json.token);
-
   })
   .catch(error => {
     console.log(`Authentication : ${Authentication}`)
     alert("Error!! Enter correct username and password", error);
   });
 }
-   
-   
 
 // Function to find data
 let findAttendance = function (token) {
@@ -65,6 +67,8 @@ let findAttendance = function (token) {
       return response.json();
     })
     .then(json => {
+      dept = json.response.data[0].dept
+      localStorage.setItem('department', dept);
       let x = json.response.data.length
       let attendance = json.response.data[x - 1].attendance_summary.Percent
       console.log(json.response.data[x - 1].attendance_summary.Percent)
@@ -103,6 +107,8 @@ window.addEventListener('load', function () {
   generateToken(savedCredentials.username, savedCredentials.password);
 
 });
+
+// https://youtu.be/2DV-bONIPqQ?si=cyYt-pcWgmoCx4vX
 
 //curl 'https://abes.platform.simplifii.com/api/v1/cards' \
 // -X 'PATCH' \
