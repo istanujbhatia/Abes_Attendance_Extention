@@ -1,6 +1,8 @@
 // Event listener for form submission
 document.getElementById('loginForm').addEventListener('submit', function (event) {
   event.preventDefault();
+  submitBtn = document.getElementById("submitBtn")
+  submitBtn.innerHTML="Credentials Saved !!"
 
   // Get values from input fields
   const username = document.getElementById('username').value;
@@ -11,8 +13,9 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   localStorage.setItem('password', password);
 
   // Alert user that credentials are saved (for demonstration purposes)
-  alert(`Credentials saved! Click on extention`);
+  // alert(`Credentials saved! Click on extention`);
 });
+
 
 // Function to retrieve saved credentials from localStorage
 function getSavedCredentials() {

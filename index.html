@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Signika+Negative:wght@300..700&display=swap"
+        rel="stylesheet">
 </head>
 <body>
     <div class="form-container" id="loginForm">
@@ -18,12 +23,12 @@
             <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
-            <button type="submit">Save Credentials</button>
+            <button type="submit" id="submitBtn">Save Credentials</button>
             <div class="forgot-password">
-                <a href="recoverPass.html">Forgot Password?</a>
+                <a id="link" href="recoverPass.html">Forgot Password?</a>
             </div>
             <div class="forgot-password">
-                <a href="chart.html">Wanna see chart?</a>
+                <a href="chart.html">See Attendance</a>
             </div>
         </form>
     </div>
