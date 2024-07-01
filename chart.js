@@ -117,8 +117,8 @@ window.addEventListener('load', function () {
 let percentage=document.getElementById('chart')
 percentage.onmouseenter=function(){
   percentage.style.color="black"
-  percentage.style.fontSize='9px'
-  percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((parseInt(attendance)*0.08))))*5}Bunks this week`
+  percentage.style.fontSize='8px'
+  percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((parseInt(attendance)*0.08))))*5} Bunks this week`
 }
 percentage.onmouseleave=function(){
   percentage.innerHTML=attendance
