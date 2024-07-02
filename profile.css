@@ -15,6 +15,10 @@ body {
     height: 500px;
     margin: 0;
 }
+.normal{
+    text-decoration: none;
+    font-weight: bold;
+}
 
 .profile-container {
     font-family: "IBM Plex Mono", monospace;
@@ -59,7 +63,6 @@ h2 {
 }
 
 .profile-info p span {
-    font-weight: bold;
     color: #000;
     margin-right: 5px;
 }
@@ -96,4 +99,40 @@ h2 {
 
 body {
     min-width: 350px;
+}
+
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Added border-radius for rounded corners */
+    width: 160px;
+}
+
+.input-container input {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 11px;
+    width: 100px;
+}
+
+.input-container button {
+    background-color: transparent;
+    border: none;
+    /* border: 1px solid #ccc; /* Added border to buttons */
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tick-button {
+    color: green;
+}
+
+.cross-button {
+    color: red;
 }
