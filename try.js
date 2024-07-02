@@ -29,29 +29,55 @@
 //     alert("Error!! Enter correct username and password", error);
 // });
 // }
-let findData = function () {
-    fetch("https://abes.platform.simplifii.com/api/v1/custom/getCFMappedWithStudentID?embed_attendance_summary=1", {
-      "method": "GET",
-      "headers": {
-        "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjU4ODQ1NjMsImlzcyI6Imh0dHBzOi8vYWJlcy5wbGF0Zm9ybS5zaW1wbGlmaWkuY29tL2FwaS92MS9hZG1pbi9hdXRoZW50aWNhdGUiLCJpYXQiOjE3MTg5MDUwNTEsImV4cCI6MTc3OTM4NTA1MSwibmJmIjoxNzE4OTA1MDUxLCJqdGkiOiJLMkVEQ1JXWnZndXZxOExHIn0.Uht2Y3ZnzNFKCUH9XcJ4ZNzu5OrUxMB9lCTtvpFu3Jg`,
-      },
-      "referrer": "https://abes.web.simplifii.com/",
-      "referrerPolicy": "strict-origin-when-cross-origin",
-      "mode": "cors",
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(json => {
-      let x = json.response.data.length
-      console.log(json.response.data[x-1].attendance_summary.Percent)
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-  }
+// let findData = function () {
+//     fetch("https://abes.platform.simplifii.com/api/v1/custom/getCFMappedWithStudentID?embed_attendance_summary=1", {
+//       "method": "GET",
+//       "headers": {
+//         "Authorization": `Bearer ${token}`,
+//       },
+//       "referrer": "https://abes.web.simplifii.com/",
+//       "referrerPolicy": "strict-origin-when-cross-origin",
+//       "mode": "cors",
+//     })
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+//       return response.json();
+//     })
+//     .then(json => {
+//       let x = json.response.data.length
+//       console.log(json.response.data[x-1].attendance_summary.Percent)
+//     })
+//     .catch(error => {
+//       console.error('Error fetching data:', error);
+//     });
+//   }
   
-  findData()
+//   findData()
+function pinChange(){
+  fetch("https://abes.platform.simplifii.com/api/v1/cards", {
+    "method": "PATCH",
+    "headers": {
+      "authorization": `Bearer ${token}`,
+    },
+    "referrer": "https://abes.web.simplifii.com/",
+    "referrerPolicy": "strict-origin-when-cross-origin",
+    "mode": "cors",
+    "body": `{\"card_unique_code\":\"${userName}\",\"action\":\"SetPin\",\"pin\":\"${newPin}\"}`,
+    // "credentials": "include"
+  }).then(res=>{
+    return res.json()
+  })
+  .then(data => console.log(data))
+  .catch(err=>{
+    console.error(err)
+  })
+
+}
+async function card() {
+  const result = await pinChange()
+  console.log(result);
+}
+card()
+

@@ -134,25 +134,6 @@ percentage.onmouseleave=function(){
 
 // https://youtu.be/2DV-bONIPqQ?si=cyYt-pcWgmoCx4vX
 
-// curl 'https://abes.platform.simplifii.com/api/v1/cards' \
-//   -X 'PATCH' \
-//   -H 'Accept: application/json, text/plain, */*' \
-//   -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
-//   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjU4ODQ0MjMsImlzcyI6Imh0dHBzOi8vYWJlcy5wbGF0Zm9ybS5zaW1wbGlmaWkuY29tL2FwaS92MS9hZG1pbi9hdXRoZW50aWNhdGUiLCJpYXQiOjE3MTk2NzExNzcsImV4cCI6MTc4MDE1MTE3NywibmJmIjoxNzE5NjcxMTc3LCJqdGkiOiJ4WXZNcndvdW95bTF5YUZOIn0.rF6_m6IDUZtx8_MYaMCPY_6VloPJorYjRcvBebjHoiU' \
-//   -H 'Connection: keep-alive' \
-//   -H 'Content-Type: application/json' \
-//   -H 'DNT: 1' \
-//   -H 'Origin: https://aims-abes.vercel.app' \
-//   -H 'Referer: https://aims-abes.vercel.app/' \
-//   -H 'Sec-Fetch-Dest: empty' \
-//   -H 'Sec-Fetch-Mode: cors' \
-//   -H 'Sec-Fetch-Site: cross-site' \
-//   -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36' \
-//   -H 'sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"' \
-//   -H 'sec-ch-ua-mobile: ?0' \
-//   -H 'sec-ch-ua-platform: "Linux"' \
-//   --data-raw '{"card_unique_code":"2022B1531039","action":"SetPin","pin":"8526"}'
-
 
 
 
