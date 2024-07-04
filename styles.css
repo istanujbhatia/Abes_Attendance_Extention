@@ -84,6 +84,19 @@ button:hover {
     text-decoration: underline;
 }
 
+.input-group {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
 /* Responsive adjustments */
 @media screen and (max-width: 480px) {
     .form-container {

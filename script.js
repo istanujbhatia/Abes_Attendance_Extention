@@ -41,6 +41,19 @@ window.addEventListener('load', function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  togglePassword.addEventListener('click', function () {
+      // Toggle the type attribute using getAttribute and setAttribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // Toggle the eye icon
+      document.getElementById('eye').classList.toggle('fa-eye');
+      document.getElementById('eye').classList.toggle('fa-eye-slash');
+  });
+});
 
 
 
