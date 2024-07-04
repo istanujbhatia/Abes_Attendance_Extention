@@ -10,7 +10,8 @@ function getSavedCredentials() {
 
 var userData;
 var dept;
-var attendance
+var attendance;
+var attendanceSummary={}
 // Function to generate token
 let generateToken = function (u, p) {
   let Authentication=false;
@@ -72,9 +73,11 @@ let findAttendance = function (token) {
       dept = json.response.data[0].dept
       localStorage.setItem('department', dept);
       let x = json.response.data.length
-      attendance = json.response.data[x - 1].attendance_summary.Percent
-      console.log(attendance)
-      localStorage.setItem('Attendance', attendance);
+      attendanceSummary=json.response.data[x - 1].attendance_summary
+      attendance = attendanceSummary.Percent
+      // console.log(attendance)
+      attendanceSummary=JSON.stringify(attendanceSummary)
+      localStorage.setItem('att', attendanceSummary);
       updatePieChart(parseFloat(attendance))
     })
     .catch(error => {
@@ -119,14 +122,28 @@ percentage.onmouseenter=function(){
   if(attendance){
     percentage.style.color="black"
     percentage.style.fontSize='8px'
-    percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((parseInt(attendance)*0.08))))*5} Bunks this week`
+    if(parseFloat(attendance)<75){
+      percentage.innerHTML=`No Bunks this week`
+
+
+    }
+    else{
+      percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((75*0.08))))*5} Bunks this week`
+
+    }
   }
 }
 percentage.onmouseleave=function(){
-  percentage.innerHTML=attendance
-  percentage.style.fontSize='25px'
-  percentage.style.color="black"
+  if(attendance){
+    percentage.innerHTML=attendance
+    percentage.style.fontSize='25px'
+    percentage.style.color="black"
+
+  }
+  
+
 }
+
 
 
 

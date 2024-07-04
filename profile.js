@@ -1,15 +1,15 @@
 var userData = JSON.parse(localStorage.getItem('userData'));
 var dept = localStorage.getItem('department');
-var att = localStorage.getItem('Attendance');
+var att = JSON.parse(localStorage.getItem('att'))
 
-if (parseInt(att) < 75) {
+if (parseInt(att.Percent) < 75) {
     document.querySelector('#msg').innerText = `Caution!!! Less Than 75%${'\n'}Take All Lectures This Week`
 }
 else {
-    document.querySelector('#msg').innerText = `Heyy!! ${userData.response.name},${'\n'}You have ${(Math.floor(8 - Math.round((parseInt(parseFloat(att)) * 0.08)))) * 5} Bunks this Week`
+    document.querySelector('#msg').innerText = `Heyy!! ${userData.response.name},${'\n'}You have ${(Math.floor(8 - Math.round((parseInt(75) * 0.08)))) * 5} Bunks this Week`
 
 }
-console.log(userData);
+// console.log(userData);
 
 
 var pinText = document.querySelector('#pinText')
