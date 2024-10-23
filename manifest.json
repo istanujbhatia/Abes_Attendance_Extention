@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "AIMS 3.0",
     "version": "1.0",
-    "description": "An extension with a login form.",
+    "description": "ABES Web Extention for one click access to AIMS",
     "permissions": ["storage"],
     "action": {
       "default_popup": "chart.html"
