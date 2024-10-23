@@ -101,15 +101,16 @@ let updatePieChart = function (attendance) {
   setTimeout(function () {
     chart.textContent = `${attendance}%`
     //your code to be executed after 1 second
-  }, 700);
+  }, 100);
 
 
   // return attendance;
 }
 
 // Load saved credentials on page load
+let savedCredentials;
 window.addEventListener('load', function () {
-  let savedCredentials = getSavedCredentials();
+  savedCredentials = getSavedCredentials();
   generateToken(savedCredentials.username, savedCredentials.password);
 
 });

@@ -51,7 +51,7 @@
 
 /* Animation class */
 .animate {
-  animation: p 3s .5s both;
+  animation: p 1s 0s both;
 }
 
 /* Hide the after element for the .no-round class */

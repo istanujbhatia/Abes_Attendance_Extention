@@ -3,7 +3,9 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   event.preventDefault();
   submitBtn = document.getElementById("submitBtn")
   submitBtn.innerHTML="Credentials Saved !!"
-
+  submitBtn.disabled=true;
+  submitBtn.style.backgroundColor="grey";
+  redirectWithLoader()
   // Get values from input fields
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
@@ -15,7 +17,18 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   // Alert user that credentials are saved (for demonstration purposes)
   // alert(`Credentials saved! Click on extention`);
 });
+//loader function 
 
+function redirectWithLoader() {
+  // Show loader and overlay
+  document.getElementById("overlay").style.display = "flex";
+  document.getElementById("loader").style.display = "block";
+
+  // Simulate a delay before redirect (e.g., 2 seconds)
+  setTimeout(function() {
+    window.location.href = "chart.html"; // Redirect to another page
+  }, 3000); // 3000ms = 3 seconds
+}
 
 // Function to retrieve saved credentials from localStorage
 function getSavedCredentials() {
@@ -56,151 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-// let generateToken = function (u, p) {
-//   //generates token
-//   fetch("https://abes.platform.simplifii.com/api/v1/admin/authenticate", {
-//     method: "POST",
-//     headers: {
-//       "accept": "*/*",
-//       "accept-language": "en-US,en;q=0.9,hi;q=0.8",
-//       "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-//       "device_id": "device_id_here",
-//       "sec-ch-ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
-//       "sec-ch-ua-mobile": "?0",
-//       "sec-ch-ua-platform": "\"Linux\"",
-//       "sec-fetch-dest": "empty",
-//       "sec-fetch-mode": "cors",
-//       "sec-fetch-site": "same-site"
-//     },
-//     referrer: "https://abes.web.simplifii.com/",
-//     referrerPolicy: "strict-origin-when-cross-origin",
-//     body: "username=" + u + "&password=" + p,
-//     mode: "cors",
-//     credentials: "omit"
-//   })
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-//       return response.json();
-//     })
-//     .then(json => {
-//       // Assuming findData function is defined elsewhere and accepts a token parameter
-//       // console.log();
-//       findData(json.token,json.response.name);
-
-//     })
-//     .catch(error => {
-//       // console.error('Error fetching token:');
-//       alert("Error!! Enter correct username and password",error)
-//     });
-
-// }
-
-
-
-
-// let findData = function (a,name) {
-//   fetch("https://abes.platform.simplifii.com/api/v1/custom/getCFMappedWithStudentID?embed_attendance_summary=1", {
-//     method: "GET",
-//     headers: {
-//       "Authorization": `Bearer ${a}`,
-//     },
-//     referrer: "https://abes.web.simplifii.com/",
-//     referrerPolicy: "strict-origin-when-cross-origin",
-//     mode: "cors",
-//     // credentials: "include"
-//   })
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-//       return response.json();
-//     })
-//     .then(json => {
-//       findAttendance(json,name);
-
-//     })
-//     .catch(error => {
-//       console.error('Error fetching data:', error);
-//     });
-// }
-
-
-
-
-
-
-
-// let findAttendance = function (a,name) {
-//   let attendance=a.response.data[18].attendance_summary.Percent
-//   // updatePieChart(attendance,100-attendance );
-//   console.log(attendance)
-//   alert(`Hello, ${name} \nYour attendance is ${attendance}`)
-
-
-// }
-
-// // Function to set the size of each slice dynamically
-// function setSliceSize(sliceElement, angle) {
-//   sliceElement.style.clip = `rect(0, 200px, 200px, ${angle > 180 ? '100px' : '0'})`;
-// }
-
-// // Function to update pie chart with given values
-// function updatePieChart(value1, value2) {
-//   const total = value1 + value2;
-//   const angle1 = (value1 / total) * 360;
-//   const angle2 = (value2 / total) * 360;
-
-//   // Update slice sizes
-//   const slice1 = document.getElementById('slice1');
-//   const slice2 = document.getElementById('slice2');
-//   setSliceSize(slice1, angle1);
-//   setSliceSize(slice2, angle2);
-// }
-
-// Example usage:
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// generateToken("2022b1531039","tanuj.1234")
-
-
-
-
-
-
-// const express = require('express');
-// const cors = require('cors');
-
-// const app = express();
-
-// const corsOptions = {
-//   origin: 'http://127.0.0.1:5500',
-//   credentials: true  // Enable credentials support
-// };
-
-// app.use(cors(corsOptions));
-
-// Your API routes and other middleware setup
-
-
-//function that return attendance summary
 
 
 
