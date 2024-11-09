@@ -7,8 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 });
 
 let passRecover = function (userName) {
-    document.getElementById("submit").disabled=true;
-    document.getElementById("submit").style.backgroundColor="grey";
+    
     fetch("https://abes.platform.simplifii.com/api/v1/forgotpassword", {
         method: "PATCH",
         headers: {
@@ -35,13 +34,26 @@ let passRecover = function (userName) {
         return response.json();
       })
       .then(json => {
-        console.log(json)
-  
+        document.getElementById("submit").disabled=true;
+        document.getElementById("submit").style.backgroundColor="grey";
+        redirectWithLoader();
+        console.log(json.msg);
       })
       .catch(error => {
-        alert('Error fetching data: ', error);
+        alert('Invalid Username');
       });
 
 }
+function redirectWithLoader() {
+  // Show loader and overlay
+  document.getElementById("overlay").style.display = "flex";
+  document.getElementById("loader").style.display = "block";
+
+  // Simulate a delay before redirect (e.g., 2 seconds)
+  setTimeout(function() {
+    window.location.href = "../Login/index.html"; // Redirect to another page
+  }, 2000); // 3000ms = 3 seconds
+}
+
 
 

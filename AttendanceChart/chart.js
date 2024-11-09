@@ -116,34 +116,34 @@ window.addEventListener('load', function () {
 });
 
 
+//hover on chart to see bunks left functionality
+
+// let percentage=document.getElementById('chart')
+// percentage.onmouseenter=function(){
+//   if(attendance){
+//     percentage.style.color="black"
+//     percentage.style.fontSize='8px'
+//     if(parseFloat(attendance)<75){
+//       percentage.innerHTML=`No Bunks this week`
 
 
-let percentage=document.getElementById('chart')
-percentage.onmouseenter=function(){
-  if(attendance){
-    percentage.style.color="black"
-    percentage.style.fontSize='8px'
-    if(parseFloat(attendance)<75){
-      percentage.innerHTML=`No Bunks this week`
+//     }
+//     else{
+//       percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((75*0.08))))*5} Bunks this week`
 
+//     }
+//   }
+// }
+// percentage.onmouseleave=function(){
+//   if(attendance){
+//     percentage.innerHTML=attendance
+//     percentage.style.fontSize='25px'
+//     percentage.style.color="black"
 
-    }
-    else{
-      percentage.innerHTML=`Easy ${(Math.floor(8-Math.round((75*0.08))))*5} Bunks this week`
-
-    }
-  }
-}
-percentage.onmouseleave=function(){
-  if(attendance){
-    percentage.innerHTML=attendance
-    percentage.style.fontSize='25px'
-    percentage.style.color="black"
-
-  }
+//   }
   
 
-}
+// }
 
 
 
