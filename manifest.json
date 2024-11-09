@@ -1,20 +1,30 @@
 {
-    "manifest_version": 3,
-    "name": "AIMS 3.0",
-    "version": "1.0",
-    "description": "ABES Web Extention for one click access to AIMS",
-    "permissions": ["storage"],
-    "action": {
-      "default_popup": "chart.html"
-    },
-    "icons": {
-   "32": "logo.png"
-},
-    "web_accessible_resources": [
-      {
-        "resources": ["styles.css","script.js"],
-        "matches": ["<all_urls>"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "AIMS 3.0",
+  "version": "1.0",
+  "description": "ABES Web Extension for one-click access to AIMS",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "AttendanceChart/chart.html"
+  },
+  "icons": {
+    "32": "images/logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "AttendanceChart/chart.css",
+        "AttendanceChart/chart.js",
+        "Downloader/download.html",
+        "Extras/pie.css",
+        "Extras/pie.html",
+        "Login/script.js",
+        "Login/styles.css",
+        "Profile/profile.css",
+        "Profile/profile.js",
+        "RecoverPassword/recoveryPass.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

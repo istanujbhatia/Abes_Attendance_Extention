@@ -26,7 +26,7 @@ function redirectWithLoader() {
 
   // Simulate a delay before redirect (e.g., 2 seconds)
   setTimeout(function() {
-    window.location.href = "chart.html"; // Redirect to another page
+    window.location.href = "../AttendanceChart/chart.html"; // Redirect to another page
   }, 3000); // 3000ms = 3 seconds
 }
 
