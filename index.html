@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Profile Card</title>
+    <title>Abes Web Extention</title>
     <style>
       /* HTML: <div class="loader"></div> */
       /* HTML: <div class="loader"></div> */
@@ -21,15 +21,26 @@
         content: "Downloading...\A⌰ownloading...\A⌰⍜wnloading...\A⌰⍜⏃nloading...\A⌰⍜⏃⎅loading...\A⌰⍜⏃⎅⟟oading...\A⌰⍜⏃⎅⟟⋏adig...\A⌰⍜⏃⎅⟟⋏☌ding...\A⌰⍜⏃⎅⟟⋏☌⟒⏃ing..\A⌰⍜⏃⎅⟟⋏☌⟒⏁ng...\A⌰⍜⏃⎅⟟⋏☌⟒⏁g...\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅..\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅⏃.\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅⏃⌰";
         white-space: pre;
         display: inline-block;
-        animation: l39 .9s infinite steps(14) alternate;
+        animation: l39 0.9s infinite steps(14) alternate;
       }
       @keyframes l39 {
         100% {
           transform: translateY(-100%);
         }
-    }
+      }
 
-      
+      .countdown {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        background-color: #007acc;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
       * {
         box-sizing: border-box;
         margin: 0;
@@ -161,8 +172,8 @@
         justify-content: center;
         align-items: center;
       }
-            /* Footer Styles */
-            footer {
+      /* Footer Styles */
+      footer {
         background-color: #fff;
         padding: 20px;
         text-align: center;
@@ -191,6 +202,7 @@
     </style>
   </head>
   <body>
+    <div class="countdown" id="countdown">Redirecting in 5 seconds...</div>
     <div class="container">
       <div class="github-card">
         <div class="section section-left"></div>
@@ -228,10 +240,10 @@
         </div>
       </div>
     </div>
-        <!-- Footer Section -->
-        <footer>
-            <p>Thanks for downloading the extension <span class="heart">❤️</span></p>
-          </footer>
+    <!-- Footer Section -->
+    <footer>
+      <p>Thanks for downloading the extension <span class="heart">❤️</span></p>
+    </footer>
 
     <script>
       const githubUsername = "istanujbhatia";
@@ -243,7 +255,9 @@
           // Populate profile data
           document.getElementById("profile-pic").src = data.avatar_url;
           document.getElementById("name").innerText = data.name || "N/A";
-          document.getElementById("username").innerHTML = `<a href="https://github.com/istanujbhatia" style="text-decoration: none;color:black;" target="_blank">@${data.login}</a>`;
+          document.getElementById(
+            "username"
+          ).innerHTML = `<a href="https://github.com/istanujbhatia" style="text-decoration: none;color:black;" target="_blank">@${data.login}</a>`;
 
           document.getElementById("bio").innerText =
             data.bio || "No bio available";
@@ -268,11 +282,31 @@
         // Show loader and overlay
         document.getElementById("overlay").style.display = "flex";
         document.getElementById("loader").style.display = "inline-grid";
-        setTimeout(()=>{
-            window.location.assign("https://github.com/istanujbhatia/Abes_Attendance_Extention/archive/refs/heads/main.zip");
-
-        },2000)
+        setTimeout(() => {
+          window.location.assign(
+            "https://github.com/istanujbhatia/Abes_Attendance_Extention/archive/refs/heads/main.zip"
+          );
+          console.log("Downloaded");
+          
+        }, 2000);
       }
+
+      setTimeout(() => {
+        // Countdown functionality
+        let countdownValue = 10;
+        const countdownElement = document.getElementById("countdown");
+
+        const countdownInterval = setInterval(() => {
+          countdownValue--;
+          countdownElement.innerText = `Redirecting in ${countdownValue} seconds...`;
+
+          if (countdownValue === 0) {
+            clearInterval(countdownInterval);
+            window.location.href =
+              "https://github.com/istanujbhatia/Abes_Attendance_Extention#readme";
+          }
+        }, 1000);
+      }, 3500);
 
       function disableLoader() {
         // Hide loader and overlay
