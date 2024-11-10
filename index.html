@@ -320,22 +320,22 @@
 
 
 
-      // setTimeout(() => {
-      //   // Countdown functionality and redirection to readme.md
-      //   let countdownValue = 7;
-      //   const countdownElement = document.getElementById("countdown");
+      setTimeout(() => {
+        // Countdown functionality and redirection to readme.md
+        let countdownValue = 7;
+        const countdownElement = document.getElementById("countdown");
 
-      //   const countdownInterval = setInterval(() => {
-      //     countdownValue--;
-      //     countdownElement.innerText = `Redirecting in ${countdownValue} seconds...`;
+        const countdownInterval = setInterval(() => {
+          countdownValue--;
+          countdownElement.innerText = `Redirecting in ${countdownValue} seconds...`;
 
-      //     if (countdownValue === 0) {
-      //       clearInterval(countdownInterval);
-      //       window.location.href =
-      //         "https://github.com/istanujbhatia/Abes_Attendance_Extention#readme";
-      //     }
-      //   }, 1000);
-      // }, 3500);
+          if (countdownValue === 0) {
+            clearInterval(countdownInterval);
+            window.location.href =
+              "https://github.com/istanujbhatia/Abes_Attendance_Extention#readme";
+          }
+        }, 1000);
+      }, 3500);
 
 
 
