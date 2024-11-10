@@ -1,54 +1,68 @@
-# Abes_Attendance_Extension
+# Abes_Attendance_Extension Setup Guide
 
-If you have a .zip file or you have cloned the extension repository, you can easily load it into Chrome. Here are the steps to do that:
+This guide explains how to set up and load a Chrome extension locally.
 
-### Step 1: Unzip the Extension
+## Prerequisites
+- Ensure you have the extension’s files in a `.zip` format or an unzipped folder , if not visit [https://abes-attendance-extention.netlify.app/]
 
-1. **Unzip the File**:
-   - Extract the contents of the .zip file to a directory on your computer. You can use any unzipping tool or built-in OS features to do this. For example, extract to a directory named `my-chrome-extension`.
+## Setup Instructions
 
-### Step 2: Load the Extension in Chrome
+1. **Unzip the Extension Files (if needed):**
+   - If the extension is in a `.zip` file, unzip it to a folder on your computer.
 
-1. **Open Chrome**:
-   - Launch the Google Chrome browser.
+2. **Open the Extensions Page in Chrome:**
+   - Open Google Chrome.
+   - Navigate to the Extensions page by entering `chrome://extensions/` in the address bar.
 
-2. **Access the Extensions Page**:
-   - Click on the three-dot menu icon in the top-right corner of Chrome.
-   - Navigate to `More tools` > `Extensions`.
-   - Alternatively, you can type `chrome://extensions/` in the address bar and press Enter.
+3. **Enable Developer Mode:**
+   - Toggle the “Developer mode” switch at the top-right of the Extensions page.
 
-3. **Enable Developer Mode**:
-   - In the Extensions page, toggle the `Developer mode` switch on the top right corner.
+4. **Load the Unzipped Extension:**
+   - Click on the “Load unpacked” button.
+   - In the file dialog, locate and select the folder containing your extension files.
+   - Your extension should now appear on the Extensions page.
 
-4. **Load Unpacked Extension**:
-   - Click the `Load unpacked` button that appears after enabling Developer mode.
-   - A file dialog will appear. Navigate to the directory where you extracted the zip file (`my-chrome-extension`), and select it.
+5. **Pin the Extension:**
+   - Locate the puzzle piece icon in the top-right corner of Chrome (next to the address bar).
+   - Click the puzzle piece icon to open the Extensions menu.
+   - Find your extension in the list, then click the pin icon next to it to add it to your toolbar.
 
-5. **Confirm the Extension is Loaded**:
-   - The extension should now appear in the list of extensions on the Extensions page.
-   - You should see the extension's icon in the Chrome toolbar if it has one.
+## Notes
+- You can now access the extension directly from your Chrome toolbar or from pinned extentions
+- For updates, replace the files in the extension folder and reload it from the Extensions page.
+
+---
 
 
+     **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
 
-By following these steps, you should be able to load and run the Chrome extension.
+
 
 
 ### How to use the extension
 
-1. **Access the Extension**:
+**Access the Extension**:
    - Open Chrome.
    - Pin the extension.
    - Click on it.
-   - Enter your credentials and hit the save button. (credentials will be saved)
-   - Click the extention twice or click on Wanna See Chart.
+   - Enter your credentials and hit the save button. (credentials will be saved) , you will see your attendance if the creds were valid
      **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
    - (If any error or in case of wrong credentials, it will show alert)
-     
-3. **Change Saved Credentials**
-   - In case of wrong credentials or to change the credentials, Click change credentials, and then save it again.
+
+
+
+### Some features of the extension
+1. **Change Saved Credentials**
+   - In case if you entered wrong credentials or to change the credentials, Click change credentials, and then save it again.
   
-4. **Recover Pass**
-   - To recover the password, click Forgot Password, and enter your Username and hit submit. (You will recieve recovery link on your college mail)
+2. **Recover Pass**
+   - To recover the password, click Forgot Password, enter your Username and hit submit. (You will recieve recovery link on your college mail)
+
+3. **See Your Profile**
+   - To see your profile, below the attendance you see a see more button ckick on it .
+
+4. **Change Quiz pin*
+   - To change pin , go to your profile you will see your quiz pin , to change it just click the pin , enter new pin and hit tick.
 
 
-     **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
+
