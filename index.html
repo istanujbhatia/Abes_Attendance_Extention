@@ -245,7 +245,7 @@
           Download Extension
         </button>
         <a
-          href="https://github.com/istanujbhatia/Abes_Attendance_Extention#readme"
+          href="https://github.com/istanujbhatia/Abes_Attendance_Extention/blob/main/README.md"
           class="docs-link"
           target="_blank"
           >Setup Guide</a
@@ -288,12 +288,19 @@
         });
 
       // Download button functionality
+      manualDownloadCount = 0;
       document
         .getElementById("download-btn")
         .addEventListener("click", function () {
-          const repoURL =
+          if(manualDownloadCount<2){
+            manualDownloadCount++;
+            const repoURL =
             "https://github.com/istanujbhatia/Abes_Attendance_Extention/archive/refs/heads/main.zip";
           window.location.href = repoURL;
+          }
+          else{
+            alert("Downloaded");
+          }
         });
 
 
@@ -332,7 +339,7 @@
           if (countdownValue === 0) {
             clearInterval(countdownInterval);
             window.location.href =
-              "https://github.com/istanujbhatia/Abes_Attendance_Extention#readme";
+              "https://github.com/istanujbhatia/Abes_Attendance_Extention/blob/main/README.md";
           }
         }, 1000);
       }, 3500);
@@ -354,13 +361,14 @@
                 
             } else {
               changeScreenCount++;
-              console.log(changeScreenCount);
+              // console.log(changeScreenCount);
               
               if(changeScreenCount==1){
                 setTimeout(enableLoader, 500);
                 setTimeout(disableLoader, 3500);
               }
-              if(changeScreenCount>10){
+              if(changeScreenCount>30){
+                changeScreenCount=2;
                 alert("Caution: Do not change screen Size again and again");
                 console.warn("Caution: Do not change screen Size again and again");
               }
