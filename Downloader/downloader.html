@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Card</title>
+    <style>
+      /* HTML: <div class="loader"></div> */
+      /* HTML: <div class="loader"></div> */
+      .loader {
+        width: fit-content;
+        font-weight: bold;
+        font-family: monospace;
+        white-space: pre;
+        font-size: 30px;
+        line-height: 1.2em;
+        height: 1.2em;
+        overflow: hidden;
+      }
+      .loader:before {
+        content: "Downloading...\A⌰ownloading...\A⌰⍜wnloading...\A⌰⍜⏃nloading...\A⌰⍜⏃⎅loading...\A⌰⍜⏃⎅⟟oading...\A⌰⍜⏃⎅⟟⋏adig...\A⌰⍜⏃⎅⟟⋏☌ding...\A⌰⍜⏃⎅⟟⋏☌⟒⏃ing..\A⌰⍜⏃⎅⟟⋏☌⟒⏁ng...\A⌰⍜⏃⎅⟟⋏☌⟒⏁g...\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅..\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅⏃.\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔☌⎅⏃⌰";
+        white-space: pre;
+        display: inline-block;
+        animation: l39 .9s infinite steps(14) alternate;
+      }
+      @keyframes l39 {
+        100% {
+          transform: translateY(-100%);
+        }
+    }
+
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f9;
+        flex-direction: column;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .github-card {
+        display: flex;
+        position: relative;
+        width: 500px; /* Width of the card */
+        height: 180px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .section {
+        height: 100%;
+      }
+
+      .section-left {
+        flex: 1;
+        background-color: #007acc;
+      }
+
+      .section-right {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .profile-pic-container {
+        position: absolute;
+        top: 50%;
+        left: 17%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        width: 90px; /* Slightly larger profile picture */
+        height: 90px;
+        border: 3px solid #fff;
+      }
+
+      .profile-pic-container img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .section-right h2 {
+        margin: 5px 0;
+        font-size: 22px; /* Increased font size for the name */
+        color: #333;
+      }
+
+      .section-right p {
+        color: #666;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14px; /* Increased font size for stats */
+        color: #333;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 500px; /* Set width equal to the card width */
+        margin-top: 20px;
+      }
+
+      .download-btn,
+      .docs-link {
+        flex: 1;
+        display: inline-block;
+        background-color: #007acc;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .download-btn:hover,
+      .docs-link:hover {
+        background-color: #005fa3;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.904);
+        display: none; /* Hidden initially */
+        justify-content: center;
+        align-items: center;
+      }
+            /* Footer Styles */
+            footer {
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      footer .heart {
+        color: red;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #007acc;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      footer p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="github-card">
+        <div class="section section-left"></div>
+        <div class="profile-pic-container">
+          <img id="profile-pic" alt="Profile Picture" />
+        </div>
+        <div class="section section-right">
+          <h2 id="name"></h2>
+          <p id="username"></p>
+          <p id="bio"></p>
+          <div class="stats">
+            <span><strong id="followers">0</strong> Followers</span>
+            <span><strong id="following">0</strong> Following</span>
+            <span><strong id="repo-count">0</strong> Repos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add download button and docs link below the card -->
+      <div class="button-container">
+        <button id="download-btn" class="download-btn">
+          Download Extension
+        </button>
+        <a
+          href="https://github.com/istanujbhatia/Abes_Attendance_Extention#readme"
+          class="docs-link"
+          target="_blank"
+          >Setup Guide</a
+        >
+      </div>
+
+      <div class="button-container">
+        <div class="overlay" id="overlay">
+          <div class="loader" id="loader"></div>
+        </div>
+      </div>
+    </div>
+        <!-- Footer Section -->
+        <footer>
+            <p>Thanks for downloading the extension <span class="heart">❤️</span></p>
+          </footer>
+
+    <script>
+      const githubUsername = "istanujbhatia";
+      const apiUrl = `https://api.github.com/users/${githubUsername}`;
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          // Populate profile data
+          document.getElementById("profile-pic").src = data.avatar_url;
+          document.getElementById("name").innerText = data.name || "N/A";
+          document.getElementById("username").innerHTML = `<a href="https://github.com/istanujbhatia" style="text-decoration: none;color:black;" target="_blank">@${data.login}</a>`;
+
+          document.getElementById("bio").innerText =
+            data.bio || "No bio available";
+          document.getElementById("followers").innerText = data.followers;
+          document.getElementById("following").innerText = data.following;
+          document.getElementById("repo-count").innerText = data.public_repos;
+        })
+        .catch((error) => {
+          console.error("Error fetching GitHub data:", error);
+        });
+
+      // Download button functionality
+      document
+        .getElementById("download-btn")
+        .addEventListener("click", function () {
+          const repoURL =
+            "https://github.com/istanujbhatia/Abes_Attendance_Extention/archive/refs/heads/main.zip";
+          window.location.href = repoURL;
+        });
+
+      function enableLoader() {
+        // Show loader and overlay
+        document.getElementById("overlay").style.display = "flex";
+        document.getElementById("loader").style.display = "inline-grid";
+        setTimeout(()=>{
+            window.location.assign("https://github.com/istanujbhatia/Abes_Attendance_Extention/archive/refs/heads/main.zip");
+
+        },2000)
+      }
+
+      function disableLoader() {
+        // Hide loader and overlay
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("loader").style.display = "none";
+      }
+
+      setTimeout(enableLoader, 500);
+      setTimeout(disableLoader, 3500);
+    </script>
+  </body>
+</html>
