@@ -34,11 +34,6 @@ This guide explains how to set up and load a Chrome extension locally.
 ---
 
 
-     **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
-
-
-
-
 ### How to use the extension
 
 **Access the Extension**:
@@ -46,7 +41,11 @@ This guide explains how to set up and load a Chrome extension locally.
    - Pin the extension.
    - Click on it.
    - Enter your credentials and hit the save button. (credentials will be saved) , you will see your attendance if the creds were valid
+
+     
      **AFTER THIS YOU ARE GOOD TO GO , JUST LOAD CHROME AND HIT THE EXTENTION TO SEE YOUR ATTENDANCE**
+
+     
    - (If any error or in case of wrong credentials, it will show alert)
 
 
