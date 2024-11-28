@@ -48,9 +48,9 @@ This guide explains how to set up and load a Chrome extension locally.
      
    - (If any error or in case of wrong credentials, it will show alert)
 
+---
 
-
-### Some features of the extension
+### Some features of this extension
 1. **Change Saved Credentials**
    - In case if you entered wrong credentials or to change the credentials, Click change credentials, and then save it again.
   
@@ -60,8 +60,12 @@ This guide explains how to set up and load a Chrome extension locally.
 3. **See Your Profile**
    - To see your profile, below the attendance you see a see more button ckick on it .
 
-4. **Change Quiz pin*
+4. **Change Quiz pin**
    - To change pin , go to your profile you will see your quiz pin , to change it just click the pin , enter new pin and hit tick.
 
+
+## Author
+
+Tanuj Bhatia
 
 
