@@ -70,15 +70,18 @@ let findAttendance = function (token) {
       return response.json();
     })
     .then(json => {
-      dept = json.response.data[0].dept
-      localStorage.setItem('department', dept);
       let x = json.response.data.length
       attendanceSummary=json.response.data[x - 1].attendance_summary
       attendance = attendanceSummary.Percent
-      // console.log(attendance)
-      attendanceSummary=JSON.stringify(attendanceSummary)
-      localStorage.setItem('att', attendanceSummary);
+      console.log(attendance)
       updatePieChart(parseFloat(attendance))
+      attendanceSummary=JSON.stringify(attendanceSummary)
+      // console.log(attendanceSummary);
+      localStorage.setItem('att', attendanceSummary);
+      dept = json.response.data[0].dept
+      localStorage.setItem('department', dept);
+      
+      
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -98,12 +101,12 @@ let updatePieChart = function (attendance) {
 
   // Re-add the animation class to trigger the animation
   chart.classList.add('animate');
-  setTimeout(function () {
-    chart.textContent = `${attendance}%`
-    //your code to be executed after 1 second
-  }, 100);
+  // setTimeout(function () {
+  //   chart.textContent = `${attendance}%`
+  //   //your code to be executed after 1 second
+  // }, 100);
 
-
+  chart.textContent = `${attendance}%`
   // return attendance;
 }
 
