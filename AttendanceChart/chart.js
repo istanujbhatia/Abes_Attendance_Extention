@@ -15,7 +15,7 @@ var attendanceSummary={}
 // Function to generate token
 let generateToken = function (u, p) {
   let Authentication=false;
-  fetch("https://abes.platform.simplifii.com/api/v1/admin/authenticate", {
+  fetch("https://abeserver.onrender.com/api/authenticate", {
     "method": "POST",
     "headers": {
       "accept": "*/*",
@@ -157,3 +157,6 @@ window.addEventListener('load', function () {
 
 
 
+
+
+//now here nthing to do more just replace all api url from x to http://localhost:8080/api/authenticate as we have made a backend proxy server to handle the api request and response
