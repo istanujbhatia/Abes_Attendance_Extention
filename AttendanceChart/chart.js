@@ -15,7 +15,7 @@ var attendanceSummary={}
 // Function to generate token
 let generateToken = function (u, p) {
   let Authentication=false;
-  fetch("https://abeserver.onrender.com/api/authenticate", {
+  fetch("https://abes-extention-server.up.railway.app/api/authenticate", {
     "method": "POST",
     "headers": {
       "accept": "*/*",
