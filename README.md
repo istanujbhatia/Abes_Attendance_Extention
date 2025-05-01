@@ -3,7 +3,7 @@
 This guide explains how to set up and load a Chrome extension locally.
 
 ## Prerequisites
-- Ensure you have the extension’s files in a `.zip` format or an unzipped folder , if not visit [https://abes-attendance-extention.netlify.app/]
+- Ensure you have the extension’s files in a `.zip` format or an unzipped folder , if not visit [https://aims-extention.netlify.app/]
 
 ## Setup Instructions
 
